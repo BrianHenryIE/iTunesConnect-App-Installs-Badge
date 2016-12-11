@@ -1,0 +1,6 @@
+vendor
+Reporter.properties
+appinstalls.txt
+.DS_Store
+composer.lock
+composer.phar

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "snscripts/itc-reporter": "1.*"
+    }
+}
