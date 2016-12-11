@@ -21,7 +21,7 @@ if ($handle) {
 }
 
 // Refresh every 24 hours
-$cacheFile = "appinstalls.txt";
+$cacheFile = "./reporter/appinstalls.txt";
 if (file_exists($cacheFile) && time()-filemtime($cacheFile) < 24 * 3600) {
   $cache = file_get_contents($cacheFile);
   $url = "https://img.shields.io/badge/installs-$cache-green.svg";
