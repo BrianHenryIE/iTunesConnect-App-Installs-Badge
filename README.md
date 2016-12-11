@@ -25,9 +25,9 @@ SKUs=com.app.relevant
 
 SKUs is a comma separated list of Bundle Identifiers that match from the begining. i.e. if you set it as `com.myapp.first,com.myapp.second` then `com.myapp.first.*` and `com.myapp.second.*` will match.
 
-* Upload `appinstalls.php` to your hosting
+* Upload `appinstalls.php` and the `vendor` folder to your hosting
 * Upload `Reporter.properties` to a subdirectory called `reporter`
-* chmod 777 the directory so the script can write the `appinstalls.txt` cache file (this works but may be too liberal, I'm open to correction)
+* Chmod 777 the `reporter` directory so the script can write the cache file
 * To block anyone from accessing `Reporter.properties`, add a `.htaccess` file to the `reporter` directory  containing:
 
 ```
@@ -39,13 +39,13 @@ Deny from all
 
 ## How it works
 
-It loops through the years previous to the current year until it finds no app installs, then loops through the current year's complete months, then the current month's days, adding everything as it goes. It writes to a cache.txt that refreshes every 24 hours. If the cache is fresh, it returns a 302 redirect to the Shields.io badge image URL.
+It loops through the years previous to the current year until it finds no app installs, then loops through the current year's complete months, then the current month's days, adding everything as it goes. It writes to a cache.txt that refreshes every 24 hours. It then returns a 302 redirect to the Shields.io badge image URL.
 
-It's very slow to run so a cron would be approprite (but I've yet to do this myself so can't advise). I think this varies between hosting providers.
+It's very slow to run so needs to be run on a schedule. You might be able to set up a cron job in your hosting control panel, otherwise use a service like [easycron.com](https://www.easycron.com)
 
 ## Status
 
-This was something I threw together on a Saturday evening. Calling my PHP rusty would be a compliment. I hope others find this useful and I can see where there might be customisations, so please, if you adapt it, send a pull request. If an actual PHP dev looks uses this, please don't hesitate to rewrite it with modern coding conventions; it should hopefully facilitate contributions. If there's an easier way to set this up, send a PR for the README.
+This was something I threw together on a Saturday evening. Calling my PHP rusty would be a compliment. I hope others find this useful and I can see where there might be customisations wanted, so please, if you adapt it, send a pull request. If an actual PHP dev looks at this, please don't hesitate to rewrite it with modern conventions; it should hopefully facilitate contributions. If there's an easier way to set this up, send a PR for the README. Also, I think my chmod 777 might be too liberal.
 
 I haven't checked the figures this returns. i.e. it seems to return v1.0 installs and v1.1 installs, but I'm not sure how updates are considered, so there may be double counting.
 
@@ -53,4 +53,4 @@ I'd love to know if people are using it, so star the repo if you do.
 
 ## Licence
 
-[MIT to be permissible](https://github.com/BrianHenryIE/iTunesConnect-App-Installs-Badge/blob/master/LICENCE). 	
+[MIT to be permissible](https://github.com/BrianHenryIE/iTunesConnect-App-Installs-Badge/blob/master/LICENCE)	
