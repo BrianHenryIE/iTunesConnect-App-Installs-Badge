@@ -2,7 +2,7 @@
 
 ![App Installs](http://sortons.ie/events/github/appinstalls.php)
  
-I wanted a badge for my GitHub that would show the number of installs my app has. Apple provides API access to some iTunesConnect data through [Reporter](https://help.apple.com/itc/appsreporterguide/#/itcbe21ac7db) which comes as a Java app. Some kind soul has ported this to PHP over at [mikebarlow/itc-reporter](https://github.com/mikebarlow/itc-reporter). I've used this library to query Apple for my app install data and use it to create a badge using [Sheilds.io](http://shields.io/) API. 
+I wanted a badge for my GitHub that would show the number of installs my app has. Apple provides API access to some iTunesConnect data through [Reporter](https://help.apple.com/itc/appsreporterguide/#/itcbe21ac7db) which comes as a Java app. Some kind soul has ported this to PHP over at [mikebarlow/itc-reporter](https://github.com/mikebarlow/itc-reporter). I've used this library to query Apple for my app install data and use it to create a badge using [Shields.io](http://shields.io/) API. 
 
 ### Requirements: 
 
@@ -18,7 +18,7 @@ I wanted a badge for my GitHub that would show the number of installs my app has
 
 ```
 UserId=myappleid@email.com
-Password=ahar-dtog-uess-pass
+Password=uset-wofa-ctora-uth!
 Account=123456789
 SKUs=com.app.relevant
 ```
