@@ -53,4 +53,4 @@ I'd love to know if people are using it, so star the repo if you do.
 
 ## Licence
 
-[MIT to be permissible](https://github.com/BrianHenryIE/iOS-App-Install-Count-Badge/blob/master/LICENCE). 	
+[MIT to be permissible](https://github.com/BrianHenryIE/iTunesConnect-App-Installs-Badge/blob/master/LICENCE). 	
