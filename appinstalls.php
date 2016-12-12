@@ -1,5 +1,7 @@
 <?php
 
+// v1.0.1
+
 // Read settings from properties file
 $handle = fopen("./reporter/Reporter.properties", "r");
 if ($handle) {
@@ -60,6 +62,8 @@ $vendors = $Reporter->getSalesVendors();
 
 $vendorNum = $vendors[0];
 
+// http://help.apple.com/itc/appssalesandtrends/#/itc2c006e6ff
+$upgradesInAppPurchasesAndRedownloads = ["FI1","IA1","IA1-M","IA9","IA9-M","IAC","IAC-M","IAY","IAY-M","1E","1EP","1EU","3","3F","3T","F3","IA3","7","7F","7T","F7"];
 
 // Yearly
 
@@ -81,7 +85,7 @@ for ($date = $yearNumber; $currentYearUnits != 0; $date--) {
   );
 
   foreach($sales as $skuLocation) {
-    if (isRelevant($skuLocation["SKU"], $skus)) {
+    if (isRelevant($skuLocation["SKU"], $skus) && !in_array($skuLocation["Product Type Identifier"], $upgradesInAppPurchasesAndRedownloads)) {
        $currentYearUnits += $skuLocation["Units"];
        $yearlyTotal += $skuLocation["Units"];
     }
