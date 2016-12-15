@@ -39,15 +39,15 @@ Deny from all
 
 ## How it works
 
-It loops through the years previous to the current year until it finds no app installs, then loops through the current year's complete months, then the current month's days, adding everything as it goes. It writes to a cache.txt that refreshes every 24 hours. It then returns a 302 redirect to the Shields.io badge image URL.
+It loops through the years previous to the current year until it finds no app installs, then loops through the current year's complete months, then the current month's days, filtering by [Product Type Identifiers](http://help.apple.com/itc/appssalesandtrends/#/itc2c006e6ff) and adding as it goes. It writes to a cache.txt that refreshes every 24 hours. It then returns a 302 redirect to the Shields.io badge image URL.
 
 It's very slow to run so needs to be run on a schedule. You might be able to set up a cron job in your hosting control panel, otherwise use a service like [easycron.com](https://www.easycron.com)
 
 ## Status
 
-This was something I threw together on a Saturday evening. Calling my PHP rusty would be a compliment. I hope others find this useful and I can see where there might be customisations wanted, so please, if you adapt it, send a pull request. If an actual PHP dev looks at this, please don't hesitate to rewrite it with modern conventions; it should hopefully facilitate contributions. If there's an easier way to set this up, send a PR for the README. Also, I think my chmod 777 might be too liberal.
+It's curently set to ignore any [Product Type Identifiers](http://help.apple.com/itc/appssalesandtrends/#/itc2c006e6ff) that are redownloads, updates or in-app purchases. I'm not certain that there's no overlap in the remaining – for my app, I get a difference of ~6% depending if I include all the 1* Product Type Identifiers.
 
-I haven't checked the figures this returns. i.e. it seems to return v1.0 installs and v1.1 installs, but I'm not sure how updates are considered, so there may be double counting.
+Please send PRs for documentation, code style (I'm not a PHP dev) and customisations.
 
 I'd love to know if people are using it, so star the repo if you do.
 
