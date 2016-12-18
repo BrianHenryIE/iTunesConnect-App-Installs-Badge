@@ -1,9 +1,9 @@
 <?php
 
-// v1.0.1
+// v1.1
 
 // Read settings from properties file
-$handle = fopen("./reporter/Reporter.properties", "r");
+$handle = fopen("Reporter.properties", "r");
 if ($handle) {
     while (($line = fgets($handle)) !== false) {
       if(0 === strpos($line, "UserId")) {
@@ -23,7 +23,7 @@ if ($handle) {
 }
 
 // Refresh every 24 hours
-$cacheFile = "./reporter/appinstalls.txt";
+$cacheFile = "appinstalls.txt";
 if (file_exists($cacheFile) && time()-filemtime($cacheFile) < 24 * 3600) {
   $cache = file_get_contents($cacheFile);
   $url = "https://img.shields.io/badge/installs-$cache-green.svg";
