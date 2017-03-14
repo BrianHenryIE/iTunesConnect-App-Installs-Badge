@@ -1,6 +1,10 @@
 # Change log
 
-### [1.1] 2016-12-18
+### [1.2] 2017-03-13
+
+Behavior changed to always serve the cached count immediately, then in the background query Apple if the data is stale.
+
+#### [1.1] 2016-12-18
 
 Changed to run the PHP script with .jpg extension so it works in BBcode.
 

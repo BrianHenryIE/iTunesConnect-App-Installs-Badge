@@ -8,7 +8,7 @@ I wanted a badge for my GitHub that would show the number of installs my app has
 
 * PHP hosting somewhere
 
-### Setup
+### Setup:
 
 * Download and use Reporter.jar to [find your Account ID](https://help.apple.com/itc/appsreporterguide/#/itcccef1d795)
 * Clone this repo locally
@@ -43,8 +43,6 @@ AddHandler application/x-httpd-php .jpg
 ## How it works
 
 It loops through the years previous to the current year until it finds no app installs, then loops through the current year's complete months, then the current month's days, filtering by [Product Type Identifiers](http://help.apple.com/itc/appssalesandtrends/#/itc2c006e6ff) and adding as it goes. It writes to a cache.txt that refreshes every 24 hours. It then returns a 302 redirect to the Shields.io badge image URL.
-
-It's very slow to run so needs to be run on a schedule. You might be able to set up a cron job in your hosting control panel, otherwise use a service like [easycron.com](https://www.easycron.com)
 
 ## Status
 

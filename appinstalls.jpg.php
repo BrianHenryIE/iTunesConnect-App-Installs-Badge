@@ -1,6 +1,6 @@
 <?php
 
-// v1.2
+// v1.1
 
 // Read settings from properties file
 $handle = fopen("Reporter.properties", "r");
@@ -22,32 +22,13 @@ if ($handle) {
     fclose($handle);
 }
 
-
-ob_start();
-
-
+// Refresh every 24 hours
 $cacheFile = "appinstalls.txt";
-if (file_exists($cacheFile)) {
+if (file_exists($cacheFile) && time()-filemtime($cacheFile) < 24 * 3600) {
   $cache = file_get_contents($cacheFile);
   $url = "https://img.shields.io/badge/installs-$cache-green.svg";
   header('Location: '.$url);
-
-    // http://stackoverflow.com/questions/10579116/how-to-flush-data-to-browser-but-continue-executing
-    ignore_user_abort(true);
-    set_time_limit(300);
-    $content = ob_get_contents();         // Get the content of the output buffer
-    ob_end_clean();                      // Close current output buffer
-    $len = strlen($content);             // Get the length
-    header('Connection: close');         // Tell the client to close connection
-    header("Content-Length: $len");     // Close connection after $len characters
-    echo $content;                       // Output content
-    flush();                             // Force php-output-cache to flush to browser.
-
-}
-
-// Refresh every 24 hours
-if (time()-filemtime($cacheFile) < 24 * 3600) {
-    exit();
+  exit();
 }
 
 require __DIR__ . '/./vendor/autoload.php';
@@ -174,3 +155,6 @@ $total = $yearlyTotal + $monthlyTotal + $dailyTotal;
 
 $myfile = fopen($cacheFile, "w") or die("Cache file write error");
 fwrite($myfile, $total);
+
+$url = "https://img.shields.io/badge/installs-$total-green.svg";
+header('Location: '.$url);
