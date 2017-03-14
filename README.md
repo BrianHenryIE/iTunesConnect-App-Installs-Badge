@@ -27,7 +27,8 @@ SKUs is a comma separated list of Bundle Identifiers that match from the beginin
 
 * Create a folder in your hosting
 * Chmod 777 the folder
-* Upload `appinstalls.svg`, `Reporter.properties` and the `vendor` folder
+* Upload `appinstalls.svg.php`, `Reporter.properties` and the `vendor` folder
+* Rename `appinstalls.svg.php` to `appinstalls.svg`
 * To block anyone from accessing `Reporter.properties`, and to enable the `.svg` to run as a script, add a `.htaccess` file to the directory  containing:
 
 ```

@@ -4,7 +4,9 @@
 
 Behavior changed to always serve the cached count immediately, then in the background query Apple if the data is stale.
 
-Changed from .jpg to .svg because that's what Shields.io use.
+Changed from `.jpg` to `.svg` because that's what Shields.io use.
+
+Renamed `.svg` to `.svg.php` so the code is visible on GitHub.
 
 #### [1.1] 2016-12-18
 
