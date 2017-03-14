@@ -4,6 +4,8 @@
 
 Behavior changed to always serve the cached count immediately, then in the background query Apple if the data is stale.
 
+Changed from .jpg to .svg because that's what Shields.io use.
+
 #### [1.1] 2016-12-18
 
 Changed to run the PHP script with .jpg extension so it works in BBcode.

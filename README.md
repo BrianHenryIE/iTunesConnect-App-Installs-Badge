@@ -1,6 +1,6 @@
 # iTunesConnect App Installs Badge
 
-![App Installs](http://sortons.ie/events/github/appinstalls/appinstalls.jpg)
+![App Installs](http://sortons.ie/events/github/appinstalls/appinstalls.svg)
  
 I wanted a badge for my GitHub that would show the number of installs my app has. Apple provides API access to some iTunesConnect data through [Reporter](https://help.apple.com/itc/appsreporterguide/#/itcbe21ac7db) which comes as a Java app. Some kind soul has ported this to PHP over at [mikebarlow/itc-reporter](https://github.com/mikebarlow/itc-reporter). I've used this library to query Apple for my app install data and use it to create a badge using [Shields.io](http://shields.io/) API. 
 
@@ -27,18 +27,18 @@ SKUs is a comma separated list of Bundle Identifiers that match from the beginin
 
 * Create a folder in your hosting
 * Chmod 777 the folder
-* Upload `appinstalls.jpg`, `Reporter.properties` and the `vendor` folder
-* To block anyone from accessing `Reporter.properties`, and to enable the `.jpg` to run as a script, add a `.htaccess` file to the directory  containing:
+* Upload `appinstalls.svg`, `Reporter.properties` and the `vendor` folder
+* To block anyone from accessing `Reporter.properties`, and to enable the `.svg` to run as a script, add a `.htaccess` file to the directory  containing:
 
 ```
 Order Allow,Deny
-<FilesMatch "appinstalls.jpg">
+<FilesMatch "appinstalls.svg">
 Allow from all
 </FilesMatch>
-AddHandler application/x-httpd-php .jpg
+AddHandler application/x-httpd-php .svg
 ```
 
-* In your repo `README.md` add `![App Installs](http://yourwebserver.com/path/appinstalls.jpg)`
+* In your repo `README.md` add `![App Installs](http://yourwebserver.com/path/appinstalls.svg)`
 
 ## How it works
 
